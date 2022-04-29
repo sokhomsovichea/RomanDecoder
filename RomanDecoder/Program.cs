@@ -3,16 +3,18 @@ using System;
 
 namespace RomanDecoder
 {
-    internal class Program
+    public class Program
     {
         private static void Main(string[] args)
         {
-            int res = RomanDecoder("VIM");
+            //int res = RomanDecoder("MCMXCIV");
+            //int res = RomanDecoder("MCMXCIV");
+            //int res = RomanDecoder("MDCLXVI");
 
-            Console.WriteLine(res);
+            //Console.WriteLine(res);
         }
 
-        public static int RomanDecoder(string roman)
+        public int RomanDecoder(string roman)
         {
             int result = 0;
             foreach (var letter in roman)
@@ -45,23 +47,6 @@ namespace RomanDecoder
                 'M' => 1000,
                 _ => throw new ArgumentException("Not A Roman Number"),
             };
-        }
-        
-
-        [Test]
-        public void Tes1()
-        {
-            int expected = 1;
-            string roman = "I";
-            Assert.AreEqual(expected, RomanDecoder(roman));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            int expected = 10;
-            string roman = "X";
-            Assert.AreEqual(expected, RomanDecoder(roman));
         }
     }
 }
