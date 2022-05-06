@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 
 namespace RomanDecoder
 {
@@ -7,11 +6,6 @@ namespace RomanDecoder
     {
         private static void Main(string[] args)
         {
-            //int res = RomanDecoder("MCMXCIV");
-            //int res = RomanDecoder("MCMXCIV");
-            //int res = RomanDecoder("MDCLXVI");
-
-            //Console.WriteLine(res);
         }
 
         public int RomanDecoder(string roman)
@@ -21,15 +15,9 @@ namespace RomanDecoder
             {
                 result += GetRomanNumber(letter);
             }
-
-            if (roman.Contains("IV") || roman.Contains("IX"))
-                result -= 2;
-
-            if (roman.Contains("XL") || roman.Contains("XC"))
-                result -= 20;
-
-            if (roman.Contains("CD") || roman.Contains("CM"))
-                result -= 200;
+            if (roman.Contains("IV") || roman.Contains("IX")) result -= 2;
+            if (roman.Contains("XL") || roman.Contains("XC")) result -= 20;
+            if (roman.Contains("CD") || roman.Contains("CM")) result -= 200;
 
             return result;
         }
